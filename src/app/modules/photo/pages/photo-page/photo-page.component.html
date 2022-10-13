@@ -1,0 +1,9 @@
+<div class="paginator">
+  <p-paginator
+    [rows]="rows"
+    [totalRecords]="totalCount$ | async" 
+    (onPageChange)="paginate($event)">
+  </p-paginator>
+</div>
+
+<app-photo-list [photos]="photos$ | async"></app-photo-list>

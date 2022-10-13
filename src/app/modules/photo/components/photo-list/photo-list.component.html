@@ -1,0 +1,15 @@
+<div class="photos-container">
+  <ng-container *ngIf="photos; else placeholder">
+    <div *ngFor="let photo of photos" class="photo-container" [routerLink]="['/photos', photo.id]">
+      <img [src]="photo.thumbnailUrl" />
+      <span class="photo-title">{{ photo.title }}</span>
+    </div>
+  </ng-container>
+</div>
+
+<ng-template #placeholder>
+  <div class="placeholder-container">
+    <p-progressSpinner></p-progressSpinner>
+    <div>Loading photos...</div>
+  </div>
+</ng-template>

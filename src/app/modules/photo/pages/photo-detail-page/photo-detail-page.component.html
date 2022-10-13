@@ -1,0 +1,17 @@
+<ng-container *ngIf="photo$ | async as photo; else noPhoto">
+  <div class="photo-container">
+    <img [src]="photo.url" />
+  </div>
+
+  <div class="photo-details-container">
+    <span class="photo-title">{{ photo.title }}</span>
+  </div>
+</ng-container>
+
+<ng-template #noPhoto>
+  <p-progressSpinner *ngIf="loading; else photoNotFound"></p-progressSpinner>
+</ng-template>
+
+<ng-template #photoNotFound>
+  Photo not found
+</ng-template>

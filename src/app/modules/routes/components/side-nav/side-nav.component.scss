@@ -1,0 +1,40 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #242B2E;
+  box-shadow: 4px 0 7px -2px #888;
+  
+  nav {
+    display: flex;
+    flex-direction: column;
+
+    a {
+      text-decoration: none;
+      padding: 1rem 2rem;
+      color: rgba(255, 255, 255, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.2s all;
+
+      .sidenav-title {
+        margin-left: 1rem;
+      }
+
+      &:hover {
+        color: rgba(255, 255, 255, 1);
+      }
+
+      &.active {
+        color: rgba(255, 255, 255, 1);
+      }
+
+      @media only screen and (max-width: 600px) {
+        .sidenav-title {
+          display: none;
+        }
+      }
+    }
+  }
+}

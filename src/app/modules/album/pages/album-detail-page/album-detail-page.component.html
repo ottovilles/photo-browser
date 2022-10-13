@@ -1,0 +1,13 @@
+<ng-container *ngIf="album$ | async as album; else noAlbum">
+  <div class="album-title">{{ album.title }}</div>
+</ng-container>
+
+<app-photo-list [photos]="albumPhotos$ | async"></app-photo-list>
+
+<ng-template #noAlbum>
+  <p-progressSpinner *ngIf="loading; else albumNotFound"></p-progressSpinner>
+</ng-template>
+
+<ng-template #albumNotFound>
+  Album not found
+</ng-template>

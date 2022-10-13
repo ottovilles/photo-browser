@@ -1,0 +1,16 @@
+<div class="albums-container">
+  <ng-container *ngIf="albums; else placeholder">
+    <app-album-cover
+      *ngFor="let album of albums"
+      [album]="album"
+      [routerLink]="['/albums', album.id]"
+    ></app-album-cover>
+  </ng-container>
+</div>
+
+<ng-template #placeholder>
+  <div class="placeholder-container">
+    <p-progressSpinner></p-progressSpinner>
+    <div>Loading albums...</div>
+  </div>
+</ng-template>
